@@ -26,7 +26,6 @@ body, html{
 
 .topbar nav{
     float: left;
-   
 }
 
 .topbar nav a{
@@ -39,6 +38,7 @@ body, html{
 
 .topbar nav a:hover{
     color: black;
+    transform: scale(10);
 }
 
 .topbar nav a:hover, .topbar nav a.active{
@@ -52,6 +52,7 @@ body, html{
 .social a{
     padding:0 12px;
     opacity: .4;
+    transition: opacity .3s;
 }
 
 .social a:hover{
@@ -176,4 +177,52 @@ body, html{
 
 .footer{
     clear: both;
+}
+p::first-letter{
+    color: red;
+    font-size: 2em;
+}
+/*
+.sidebar ul{
+    counter-reset: sidebarlist;
+}
+
+.sidebar li::before{
+    counter-increment: sidebarlist;
+    content: counter(sidebarlist) ". ";
+}*/
+
+.sidebar li a::after{
+    content: attr(data-count);
+    float: right;
+    background: grey;
+    text-align: center;
+    color: white;
+    border-radius: 25px;
+    width: 25px;
+    height: 25px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    line-height: 25px;
+}
+
+.article-img{
+    transform: scale(0.5);
+    transition: transform .5s 1s;
+    animation: slideDown 1s ;
+}
+
+.article img:hover{
+    transform: scale(1.1) rotate(10deg);
+}
+@keyframes slideDown {
+0%{
+    transform: translateX(200px);
+    opacity: 1;
+}
+
+100%{
+    transform: translateX(-200px);
+    opacity: 0;
+}
 }
